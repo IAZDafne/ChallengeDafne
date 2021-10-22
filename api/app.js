@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors')
 const app = express();
 const sequelize = require('./database/db');
-const User = require('./database/models/User');
+const User = require('./dataBase/models/Users');
 require('./database/relations');
 
 //setting

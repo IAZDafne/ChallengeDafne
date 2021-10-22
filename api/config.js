@@ -9,7 +9,7 @@ module.exports = {
     database:{
         username: `${DB_USER}`,
         password: `${DB_PASSWORD}`,
-        database: 'Atachi', 
+        database: 'Pruebas', 
         host: `${DB_HOST}`
     }
 } 
