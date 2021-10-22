@@ -4,6 +4,7 @@ const User = require('../dataBase/models/Users');
 exports.postUser = async (req, res) => {
 
     const { first_name, last_name,  password,picture, email } = req.body;
+    console.log('hola soy user', first_name, last_name,  password,picture, email )
 
     try {
 
@@ -35,7 +36,7 @@ exports.loginUser = async (req, res) => {
     const { type, email, password } = req.body;
     if (type === 'email'){
         User.findOne({
-            where: {
+            where: {    
                 email,
                 password
             }

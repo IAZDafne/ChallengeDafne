@@ -4,19 +4,19 @@ const { database } = require('../config');
 
 //DB LOCAL
 //Option 2: Passing parameters separately (other dialects)
-// const sequelize = new Sequelize(
-//     database.database,
-//     database.username,
-//     database.password, {
-//         host: database.host,
-//         dialect: 'postgres',
-//         logging: false
-//     },
-// );
+const sequelize = new Sequelize(
+    database.database,
+    database.username,
+    database.password, {
+        host: database.host,
+        dialect: 'postgres',
+        logging: false
+    },
+);
 
 //DB DEPLOYADA
-const sequelize = new Sequelize('postgres://lwlzssup:zrsw5lPpGhqUpCvVtBLuL0kRCjb0cwaa@otto.db.elephantsql.com/lwlzssup', {
-    // Hace que no muestre todos los mensajes de conexion con SQL en la consola cuando inicias el servidor.
-    logging: false
-})
+// const sequelize = new Sequelize('postgres://lwlzssup:zrsw5lPpGhqUpCvVtBLuL0kRCjb0cwaa@otto.db.elephantsql.com/lwlzssup', {
+//     // Hace que no muestre todos los mensajes de conexion con SQL en la consola cuando inicias el servidor.
+//     logging: false
+// })
 module.exports = sequelize;

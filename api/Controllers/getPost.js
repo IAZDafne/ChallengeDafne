@@ -2,7 +2,7 @@ const Post = require('../dataBase/models/Post');
 const User = require('../dataBase/models/Users');
 
 
-exports.getAllComments = async (req, res) => {
+exports.getAllPost = async (req, res) => {
 
     const { id } = req.query;
     let consult;

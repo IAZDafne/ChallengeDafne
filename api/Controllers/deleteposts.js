@@ -1,9 +1,10 @@
 const Post= require('../dataBase/models/Post');
 const User = require('../dataBase/models/Users');
 
-exports.deleteComment = async (req, res) => {
+exports.deletePost = async (req, res) => {
 
     const { postId } = req.body
+    console.log('hola soy deletePost',postId)
 
     if (postId) {
         try {
