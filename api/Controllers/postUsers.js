@@ -1,10 +1,11 @@
 const User = require('../dataBase/models/Users');
+const jwt = require('jsonwebtoken');
 
 
 exports.postUser = async (req, res) => {
 
-    const { first_name, last_name,  password,picture, email } = req.body;
-    console.log('hola soy user', first_name, last_name,  password,picture, email )
+    const { first_name, last_name,  password,picture, email ,token} = req.body;
+    console.log('hola soy user', first_name, last_name,  password,picture, email,token )
 
     try {
 
@@ -14,7 +15,9 @@ exports.postUser = async (req, res) => {
             },
             defaults: {
                 first_name, last_name, password,
-                 picture, email,}
+                 picture, email, token
+                
+                }
         });
 
         if (created) {
@@ -31,6 +34,9 @@ exports.postUser = async (req, res) => {
         res.json({ msg: `Porfavor checa tu información ` });
     }
 }
+
+
+
 
 exports.loginUser = async (req, res) => {
     const { type, email, password } = req.body;

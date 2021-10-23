@@ -22,7 +22,7 @@ app.listen(port, '0.0.0.0', () => {
 
 
 
-  sequelize.sync({ force: false}).then(async () => {
+  sequelize.sync({ force: true}).then(async () => {
 
     console.log('Conection to the DB Success');
   

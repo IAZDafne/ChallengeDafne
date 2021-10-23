@@ -25,3 +25,21 @@ exports.getUserByID = async (req,res) => {
         res.json({msg:'Error!!'})
     }
 }
+exports.getToken= async (req, res) => {
+    const {email,password} = req.query;
+    console.log( 'hola soy',email)
+    const user=await User.findOne({
+        where:{
+            email
+        }
+    });
+    bcrypt.compare(password, user.password, function(err, result) {
+      if(result){
+        res.status(200).json({token:user.token,firstName:user.firstName,lastName:user.lastName,picture:user.picture});
+      }
+      else{
+        res.status(404).json(err)
+      }
+  });
+  }
+  
